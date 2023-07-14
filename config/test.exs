@@ -9,7 +9,7 @@ config :tmdb_clone, TmdbClone.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "tmdb_clone_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "tmdb_clone_test",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
