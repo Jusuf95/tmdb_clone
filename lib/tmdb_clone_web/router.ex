@@ -5,8 +5,18 @@ defmodule TmdbCloneWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug Guardian.Plug.VerifySession, claims: %{"typ" => "access"}
+    plug Guardian.Plug.LoadResource
+  end
+
   scope "/api", TmdbCloneWeb do
-    pipe_through :api
+    pipe_through(:api)
+    post "/users", UserController, :create
+    post "/sign_in", UserController, :sign_in
+
+    pipe_through(:auth)
+    delete "/users/:id", UserController, :delete
   end
 
   # Enable LiveDashboard in development

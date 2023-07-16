@@ -7,8 +7,7 @@ defmodule TmdbCloneWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_tmdb_clone_key",
-    signing_salt: "sQYZoRr5",
-    same_site: "Lax"
+    signing_salt: "sQYZoRr5"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]

@@ -3,9 +3,9 @@ defmodule TmdbClone.Schema.Movies do
   import Ecto.Changeset
 
   @required_fields [
-  :movie_name,
-  :author,
-  :category
+    :movie_name,
+    :author,
+    :category
   ]
 
   @permitted_fields [

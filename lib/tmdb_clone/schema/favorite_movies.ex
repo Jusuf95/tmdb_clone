@@ -3,8 +3,8 @@ defmodule TmdbClone.Schema.FavoriteMovies do
   import Ecto.Changeset
 
   @required_fields [
-  :movie_name,
-  :name
+    :movie_name,
+    :name
   ]
 
   @permitted_fields [

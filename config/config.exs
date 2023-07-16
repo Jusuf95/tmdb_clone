@@ -19,6 +19,12 @@ config :tmdb_clone, TmdbClone.Repo,
 config :tmdb_clone,
   ecto_repos: [TmdbClone.Repo]
 
+config :guardian, Guardian,
+  allowed_algos: ["HS512"],
+  secret_key: "your_secret_key_here",
+  issuer: "your_issuer",
+  ttl: {2, :days}
+
 # Configures the endpoint
 config :tmdb_clone, TmdbCloneWeb.Endpoint,
   url: [host: "localhost"],

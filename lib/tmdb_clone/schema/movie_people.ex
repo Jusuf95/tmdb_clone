@@ -3,8 +3,8 @@ defmodule TmdbClone.Schema.MoviePeople do
   import Ecto.Changeset
 
   @required_fields [
-  :movie_id,
-  :actor_id
+    :movie_id,
+    :actor_id
   ]
 
   @permitted_fields [

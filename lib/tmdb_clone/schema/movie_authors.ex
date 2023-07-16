@@ -3,8 +3,8 @@ defmodule TmdbClone.Schema.MovieAuthors do
   import Ecto.Changeset
 
   @required_fields [
-  :movie_id,
-  :author_id
+    :movie_id,
+    :author_id
   ]
 
   @permitted_fields [
