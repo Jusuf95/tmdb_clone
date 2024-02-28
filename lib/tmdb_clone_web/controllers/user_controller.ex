@@ -14,18 +14,18 @@ defmodule TmdbCloneWeb.UserController do
             |> put_flash(:info, "Account created successfully and user signed in.")
             |> redirect(to: "/")
 
-          _ ->
+           _->
             Logger.error("Failed to create token.")
 
             conn
-            |> redirect(to: "/")
+            |> redirect(to: "/sign_in")
         end
 
       {:error, changeset} ->
         Logger.error("Failed to create account: #{inspect(changeset.errors)}")
 
         conn
-        |> redirect(to: "/")
+        |> redirect(to: "/sign_in")
     end
   end
 
@@ -35,13 +35,13 @@ defmodule TmdbCloneWeb.UserController do
         Logger.info("User deleted successfully.")
 
         conn
-        |> redirect(to: "/")
+        |> redirect(to: "/sign_in")
 
       {:error, _changeset} ->
         Logger.error("Failed to delete user.")
 
         conn
-        |> redirect(to: "/")
+        |> redirect(to: "/users/#{user_params["id"]}")
     end
   end
 
@@ -57,7 +57,7 @@ defmodule TmdbCloneWeb.UserController do
         Logger.error("Failed to sign in: #{reason}")
 
         conn
-        |> redirect(to: "/login")
+        |> redirect(to: "/sign_in")
     end
   end
 end
