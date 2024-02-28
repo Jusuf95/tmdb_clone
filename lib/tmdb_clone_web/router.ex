@@ -12,6 +12,7 @@ defmodule TmdbCloneWeb.Router do
 
   scope "/api", TmdbCloneWeb do
     pipe_through(:api)
+    get "/get_movie", MoviesControler, :get_movie
     post "/users", UserController, :create
     post "/sign_in", UserController, :sign_in
 

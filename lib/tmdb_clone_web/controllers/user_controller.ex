@@ -14,7 +14,7 @@ defmodule TmdbCloneWeb.UserController do
             |> put_flash(:info, "Account created successfully and user signed in.")
             |> redirect(to: "/")
 
-           _->
+          _ ->
             Logger.error("Failed to create token.")
 
             conn

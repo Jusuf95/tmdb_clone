@@ -19,7 +19,7 @@ defmodule TmdbClone.Schema.Movies do
   schema "movies" do
     field :movie_name, :string
     field :author, :string
-    field :rate, :string
+    field :rate, :float
     field :date, :date
     field :category, :string
     field :overview, :string
